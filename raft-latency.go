@@ -10,10 +10,10 @@ import (
 
 func main() {
 	// Base URL for the PUT request
-	baseURL := "http://128.110.216.12:8050/"
+	baseURL := "http://128.110.216.120:8060/"
 
 	// Number of requests to make
-	numRequests := 10000
+	numRequests := 100
 
 	// Initialize total time
 	totalTime := time.Duration(0)

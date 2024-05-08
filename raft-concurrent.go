@@ -63,7 +63,7 @@ func main() {
 	}
 
 	// Base URL for the PUT request
-	baseURL := "http://128.110.216.12:8050/"
+	baseURL := "http://127.0.0.1:8060/"
 
 
 	// Initialize total time
@@ -113,12 +113,12 @@ func main() {
 			startTime := time.Now()
 
 			done := false
-			for !done {
+			// for !done {
 				// Perform the PUT request
 				resp, err := client.Do(req)
 				if err != nil {
 					fmt.Println("Error making request:", err)
-					continue
+					// continue
 				}
 				defer resp.Body.Close()
 
@@ -129,13 +129,14 @@ func main() {
 					return
 				}
 				if strings.TrimSpace((string(body))) != "done" {
-					// fmt.Println("Response not done:", string(body))
+					fmt.Println("Response not done:", string(body))
 
 				} else {
 					done = true
+					fmt.Println("Done: ", done)
 				}
 
-			}
+			// }
 			
 
 
